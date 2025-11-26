@@ -2,14 +2,14 @@
 int main()
 {
 	double city = 50, forest = 50, ocean = 50;
-	int r, a, b, c;
-	double *p;
-	const char *name;
+	int r, a=0, b=0, c=0;
+	double *p; //double로 실수 넣기 포인터 변수 p  //*p는 p;값 
+	const char *name; //문자열 포인터 
 	
-	printf("1. 도시 2. 숲 3, 바다\n");
+	printf("1. 도시 2. 숲 3. 바다\n");
 	scanf("%d", &r);
 	
-	if(r==1){ p = &city; name = "도시";}
+	if(r==1){ p = &city; name = "도시";} //name에 문자열 저장 
 	else if (r==2){p = &forest; name = "숲";}
 	else if (r==3){p = &ocean; name = "바다";}
 	else {printf("잘못된 선택\n"); return 0;}
@@ -35,13 +35,19 @@ int main()
 	
 	
 	if (a==1) *p -= 10;
+	else if (a==2) *p += 0;
 	else if (a==3) *p += 15;
+	else {printf("잘못된 선택\n"); return 0;}
 	
 	if (b==1) *p -= 10;
+	else if (b==2) *p += 10;
 	else if (b==3) *p += 15;
+	else {printf ("잘못된 선택\n"); return 0;}
 	
 	if (c==1) *p -= 10;
+	else if (c==2) *p += 0;
 	else if (c==3) *p += 15;
+	else {printf ("잘못된 선택\n"); return 0;}
 	
 	if (*p < 0)*p = 0;
 	if (*p > 100)*p = 100;
